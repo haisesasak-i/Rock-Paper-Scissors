@@ -24,4 +24,5 @@ function getChoiceThroughNumber(choiceNumber=0){
         return "Not a valid choice number"
     }
 }
-
+let humanScore =0;
+let globalScore =0;
