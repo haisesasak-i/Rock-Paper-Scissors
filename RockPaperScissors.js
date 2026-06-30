@@ -54,34 +54,27 @@ function playGame(){
 
 
 
-function playRound(humanSelection="", computerSelection=""){
-    printChoices(humanSelection,computerSelection);
-     //.toLowerCase() is not necessary but if i let user give string input , i will not have to change the play round again
-    if (humanSelection.toLowerCase()===computerSelection.toLowerCase()){
-      console.log("Its a draw!");
+function playRound(humanSelection = "", computerSelection = "") {
+    printChoices(humanSelection, computerSelection);
+
+    //.toLowerCase() is not necessary but if i let user give string input , i will not have to change the play round again
+    humanSelection = humanSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
+    if (humanSelection === computerSelection) {
+        console.log("It's a draw!");
         return "draw";
     }
-   
-    else if (humanSelection.toLowerCase()==="paper"&&computerSelection.toLowerCase()==="rock"){
-        console.log("You won!");
-        return "win";
-        
-    }
-    else if (humanSelection.toLowerCase()==="scissors"&&computerSelection.toLowerCase()==="paper"){
-        console.log("You won!");
-        return "win";
-;
-    }
-    else if (humanSelection.toLowerCase()==="rock"&&computerSelection.toLowerCase()==="scissors"){
-        return "win";
-        
-    }
-    else{
-        return "lose";
-        
-    }
-    
 
+    if (
+        (humanSelection === "paper" && computerSelection === "rock") ||
+        (humanSelection === "scissors" && computerSelection === "paper") ||
+        (humanSelection === "rock" && computerSelection === "scissors")
+    ) {
+        return "win";
+    }
+
+    return "lose";
 }
 function printChoices(humanSelection="", computerSelection=""){
     console.log(`You chose:${humanSelection}\nComputer chose: ${computerSelection}`);
