@@ -43,8 +43,7 @@ function playGame(){
             console.log("You lost the round");
             break;
             default:
-            humanScore++;
-            computerScore++;
+            console.log("This round was a draw");
         }
         printRoundScores(humanScore,computerScore,i);
         
