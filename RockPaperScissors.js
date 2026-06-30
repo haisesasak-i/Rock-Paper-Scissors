@@ -56,7 +56,7 @@ function playRound(humanSelection="", computerSelection=""){
      //.toLowerCase() is not necessary but if i let user give string input , i will not have to change the play round again
     if (humanSelection.toLowerCase()===computerSelection.toLowerCase()){
       console.log("Its a draw!");
-     
+        return "draw";
     }
    
     else if (humanSelection.toLowerCase()==="paper"&&computerSelection.toLowerCase()==="rock"){
@@ -70,7 +70,7 @@ function playRound(humanSelection="", computerSelection=""){
 ;
     }
     else if (humanSelection.toLowerCase()==="rock"&&computerSelection.toLowerCase()==="scissors"){
-        return window;
+        return "win";
         
     }
     else{
