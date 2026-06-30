@@ -1,4 +1,4 @@
-
+playGame();
 function getComputerChoice(){
     let choiceNumber = Math.floor(Math.random()*3)+1;
     return getChoiceThroughNumber(choiceNumber);
@@ -36,17 +36,21 @@ function playGame(){
         switch(result){
             case "win":
             humanScore++;
+            console.log("You won the round");
             break;
             case "lose":
             computerScore++;
+            console.log("You lost the round");
             break;
             default:
             humanScore++;
-            computerScore;;
+            computerScore++;
         }
         printRoundScores(humanScore,computerScore,i);
         
     }
+    console.log("Game Result:")
+    printGameResult(humanScore,computerScore);
 }
 
 
@@ -84,10 +88,11 @@ function printChoices(humanSelection="", computerSelection=""){
     console.log(`You chose:${humanSelection}\nComputer chose: ${computerSelection}`);
 }
 function printRoundScores(humanScore=0,computerScore=0,roundNumber=1){
-    console.log(`Round${roundNumber} Scores:`);
+    console.log(`Round ${roundNumber+1} Scores:`);
     console.log(`Your Score:${humanScore}\nComputer Score:${computerScore}`);
 }
 function printGameResult(humanScore = 0, computerScore = 0) {
+    
     if (humanScore > computerScore) {
         console.log("Congratulations! You won the game!");
     } else if (computerScore > humanScore) {
