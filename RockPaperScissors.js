@@ -62,7 +62,6 @@ function playRound(humanSelection = "", computerSelection = "") {
     computerSelection = computerSelection.toLowerCase();
 
     if (humanSelection === computerSelection) {
-        console.log("It's a draw!");
         return "draw";
     }
 
