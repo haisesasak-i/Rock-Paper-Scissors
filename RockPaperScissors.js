@@ -3,7 +3,15 @@ function getComputerChoice(){
     return getChoiceThroughNumber(choiceNumber);
     
 }
+function getHumanChoice(){
+    let userChoice = 0;
+    do {
+        userChoice = +prompt("Choose your weapon:\n1.Rock\n2.Paper\n3.Scissors\nEnter your choice number:");
+    } while (!(userChoice>0&&userChoice<4));
+    console.log(userChoice);
+    return getChoiceThroughNumber(userChoice);
 
+}
 function getChoiceThroughNumber(choiceNumber=0){
     switch(choiceNumber){
         case 1:
@@ -16,5 +24,4 @@ function getChoiceThroughNumber(choiceNumber=0){
         return "Not a valid choice number"
     }
 }
-
 
