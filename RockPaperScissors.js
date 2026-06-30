@@ -6,10 +6,9 @@ function getComputerChoice(){
 function getHumanChoice(){
     let userChoice = 0;
     do {
-        userChoice = +prompt("Choose your weapon:\n1.Rock\n2.Paper\n3.Scissors\nEnter your choice number:");
-    } while (!(userChoice>0&&userChoice<4));
-    console.log(userChoice);
-    return getChoiceThroughNumber(userChoice);
+        userChoiceNumber = +prompt("Choose your weapon:\n1.Rock\n2.Paper\n3.Scissors\nEnter your choice number:");
+    } while (!(userChoiceNumber>0&&userChoiceNumber<4));
+    return getChoiceThroughNumber(userChoiceNumber);
 
 }
 function getChoiceThroughNumber(choiceNumber=0){
@@ -26,3 +25,12 @@ function getChoiceThroughNumber(choiceNumber=0){
 }
 let humanScore =0;
 let globalScore =0;
+const userChoice =getHumanChoice();
+const computerChoice = getComputerChoice();
+printChoices(userChoice,computerChoice);
+
+
+
+function printChoices(humanSelection, computerSelection){
+    console.log(`You chose:${humanSelection}\nComputer chose:${computerSelection}`);
+}
