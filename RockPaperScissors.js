@@ -87,3 +87,12 @@ function printRoundScores(humanScore=0,computerScore=0,roundNumber=1){
     console.log(`Round${roundNumber} Scores:`);
     console.log(`Your Score:${humanScore}\nComputer Score:${computerScore}`);
 }
+function printGameResult(humanScore = 0, computerScore = 0) {
+    if (humanScore > computerScore) {
+        console.log("Congratulations! You won the game!");
+    } else if (computerScore > humanScore) {
+        console.log("You lost the game. Better luck next time!");
+    } else {
+        console.log("It's a draw!");
+    }
+}
