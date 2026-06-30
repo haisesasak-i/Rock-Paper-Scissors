@@ -62,3 +62,7 @@ function playRound(humanSelection="", computerSelection=""){
 function printChoices(humanSelection="", computerSelection=""){
     console.log(`You chose:${humanSelection}\nComputer chose: ${computerSelection}`);
 }
+function printRoundScores(roundNumber=1,humanScore,computerScore){
+    console.log(`Round${roundNumber} Scores:`);
+    console.log(`Your Score:${humanScore}\nComputer Score:${computerScore}`);
+}
