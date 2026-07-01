@@ -17,14 +17,12 @@ body {
 
 .sectionMain {
     color: #3B82F6;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
 
 }
 
-.buttonHeading {
-    
-}
+
 
 .sectionStyle,
 button {
@@ -93,15 +91,62 @@ div img {
     background-color: #EF4444;
 }
 
-.text {
-    font-size: 24px;
-    font-weight: 600;
+.text,
+.scoreText {
     color: #F8FAFC;
 }
 
+.text {
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+.scoreBoard {
+    text-align: center;
+}
+
+.scoreBoard {
+    gap: 30px;
+    min-width: 400px;
+}
+
 .buttonsContainer {
-    display: flex;
     gap: 20px;
+
     flex-wrap: wrap;
 
+}
+
+.player,
+.round,
+.opponent {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.scoreText {
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+.computerCurrent,
+.playerCurrent,
+.roundNumber {
+    font-size: 27px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.computerCurrent {
+    color: #EF4444;
+}
+
+.playerCurrent {
+    color: #2563EB;
+}
+
+.roundNumber {
+    color: #677c98;
 }
