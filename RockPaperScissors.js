@@ -42,19 +42,18 @@ function playGame(userChoice =""){
    
         const computerChoice = getComputerChoice();
         let result =playRound(userChoice,computerChoice);
-        
-        // switch(result){
-        //     case "win":
-        //     humanScore++;
-        //     console.log("You won the round");
-        //     break;
-        //     case "lose":
-        //     computerScore++;
-        //     console.log("You lost the round");
-        //     break;
-        //     default:
-        //     console.log("This round was a draw");
-        // }
+        const resultText = document.querySelector(".result");
+
+        switch(result){
+            case "win":
+            resultText.textContent="You have won the round.";
+            break;
+            case "lose":
+            resultText.textContent="You have lost the round."
+            break;
+            default:
+            resultText.textContent="This round was a draw";
+        }
         printRoundScores(result);
         
     
