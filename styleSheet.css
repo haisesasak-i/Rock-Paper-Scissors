@@ -29,10 +29,14 @@ button {
     border-radius: 16px;
 }
 
+
+
 .mainContent,
-.sectionStyle {
+.sectionStyle,
+body {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
+
 }
 
 
@@ -40,7 +44,7 @@ button {
     background-color: #1E293B;
     border: 2px solid #334155;
 
-    padding: 30px;
+    padding: 20px;
 
 
     align-items: center;
@@ -134,19 +138,34 @@ div img {
 .computerCurrent,
 .playerCurrent,
 .roundNumber {
-    font-size: 27px;
+    font-size: 50px;
     font-weight: 700;
     margin-top: 8px;
 }
 
-.computerCurrent {
+.computerCurrent,
+.computer,
+.resultLoser {
     color: #EF4444;
 }
 
-.playerCurrent {
+.playerCurrent,
+.user {
     color: #2563EB;
 }
 
 .roundNumber {
     color: #677c98;
+}
+
+.computer,
+.user,
+.result {
+    font-size: 30px;
+    font-weight: 600;
+
+}
+
+.resultWinner {
+    color: #22C55E;
 }
