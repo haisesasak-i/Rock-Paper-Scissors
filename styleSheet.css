@@ -153,8 +153,7 @@ div img {
 }
 
 .computerCurrent,
-.computer,
-.resultLoser {
+.computer {
     color: #EF4444;
 }
 
@@ -175,8 +174,16 @@ div img {
 
 }
 
-.resultWinner {
+.winner {
     color: #22C55E;
+}
+
+.loser {
+    color: #d80a0a
+}
+
+.draw {
+    color: gold;
 }
 
 .footerText {
