@@ -40,7 +40,7 @@ function getChoiceThroughNumber(choiceNumber=0){
 }
 function playGame(userChoice =""){
         if(endGameOrNot()){
-            displayResult("You have already completed the game!",0);
+            displayResult("You have already completed the game.Refresh to play again.!",1);
             return;
         }
         const computerChoice = getComputerChoice();
@@ -62,11 +62,13 @@ function playGame(userChoice =""){
              displayResult("This round is a draw",2);
         }
         
+            
+            
        if(endGameOrNot()) {
+            
+            
             const humanScore = document.querySelector(".playerCurrent");
             const computerScore = document.querySelector(".computerCurrent");
-            
-
             printGameResult(humanScore,computerScore);
        }
     
@@ -129,14 +131,16 @@ function updateScoreAndRound(className){
 
 }
 
-function printGameResult(humanScore="",computerScore="") {
-    
-    if (humanScore > computerScore) {
-        displayResult("Congratulations! You won the game!",0)
-    } else if (computerScore > humanScore) {
-        displayResult("You lost the game. Better luck next time!",1);
+function printGameResult(humanScore = 0, computerScore = 0) {
+    const human = Number(humanScore);
+    const computer = Number(computerScore);
+
+    if (human > computer) {
+        displayResult("Congratulations! You won the game!", 0);
+    } else if (computer > human) {
+        displayResult("You lost the game. Better luck next time!", 1);
     } else {
-        displayResult("This game is a draw!",2);
+        displayResult("This game is a draw!", 2);
     }
 }
 //it gets the index of class depending on the winner and removes the classes and apply the required class like winner class if round is a win
