@@ -59,10 +59,15 @@ function playGame(userChoice =""){
              displayResult("This round is a draw",2);
         }
         
-        
+       if(continueGameOrNot()) {
+            const humanScore = document.querySelector(".playerCurrent");
+            const computerScore = document.querySelector(".computerCurrent");
+
+            printGameResult(humanScore,computerScore);
+       }
     
     
-    // printGameResult(humanScore,computerScore);
+   
 }
 function displayResult(message="",index=-1){
     const resultText = document.querySelector(".result");
@@ -123,11 +128,11 @@ function updateScoreAndRound(className){
 function printGameResult(humanScore = 0, computerScore = 0) {
     
     if (humanScore > computerScore) {
-        console.log("Congratulations! You won the game!");
+        displayResult("Congratulations! You won the game!",0)
     } else if (computerScore > humanScore) {
-        console.log("You lost the game. Better luck next time!");
+        displayResult("You lost the game. Better luck next time!",1);
     } else {
-        console.log("It's a draw!");
+        displayResult("It's a draw!",2);
     }
 }
 //it gets the index of class depending on the winner and removes the classes and apply the required class like winner class if round is a win
