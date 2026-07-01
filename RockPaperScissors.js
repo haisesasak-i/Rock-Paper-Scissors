@@ -39,7 +39,10 @@ function getChoiceThroughNumber(choiceNumber=0){
     }
 }
 function playGame(userChoice =""){
-   
+        if(endGameOrNot()){
+            displayResult("You have already completed the game!",0);
+            return;
+        }
         const computerChoice = getComputerChoice();
         let result =playRound(userChoice,computerChoice);
         printRoundScores(result);
@@ -143,5 +146,5 @@ function toggleClasses(result,index){
 
 }
 function endGameOrNot(){
-    return document.querySelector(".playerCurrent").textContent==="1"||document.querySelector(".computerCurrent").textContent==="1";
+    return document.querySelector(".playerCurrent").textContent==="5"||document.querySelector(".computerCurrent").textContent==="5";
 }
