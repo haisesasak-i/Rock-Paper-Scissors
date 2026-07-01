@@ -42,26 +42,33 @@ function playGame(userChoice =""){
    
         const computerChoice = getComputerChoice();
         let result =playRound(userChoice,computerChoice);
-        const resultText = document.querySelector(".result");
+        printRoundScores(result);
+        
 
         switch(result){
             case "win":
-            resultText.textContent="Congratulations!You have won the round.";
-            toggleClasses(resultText,0);
+            displayResult("Congratulations!You have won the round.",0);
+           
+           
+            
             break;
             case "lose":
-            resultText.textContent="Alas! You have lost the round."
-            toggleClasses(resultText,1);
+             displayResult("Alas! You have lost the round.",1);
             break;
             default:
-            resultText.textContent="This round was a draw";
-            toggleClasses(resultText,2);
+             displayResult("This round is a draw",2);
         }
-        printRoundScores(result);
+        
         
     
-    // console.log("Game Result:")
+    
     // printGameResult(humanScore,computerScore);
+}
+function displayResult(message="",index=-1){
+    const resultText = document.querySelector(".result");
+    resultText.textContent=message;
+    toggleClasses(resultText,index);
+
 }
 
 
@@ -128,4 +135,7 @@ function toggleClasses(result,index){
     let classNames = ["winner","loser","draw"];
     classNames.forEach((value,i)=>{if(index===i ) result.classList.toggle(value,true); else result.classList.toggle(value,false) });
 
+}
+function continueGameOrNot(){
+    return document.querySelector(".roundNumber").textContent==="5";
 }
