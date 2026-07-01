@@ -59,9 +59,10 @@ function playGame(userChoice =""){
              displayResult("This round is a draw",2);
         }
         
-       if(continueGameOrNot()) {
+       if(endGameOrNot()) {
             const humanScore = document.querySelector(".playerCurrent");
             const computerScore = document.querySelector(".computerCurrent");
+            
 
             printGameResult(humanScore,computerScore);
        }
@@ -125,7 +126,7 @@ function updateScoreAndRound(className){
 
 }
 
-function printGameResult() {
+function printGameResult(humanScore="",computerScore="") {
     
     if (humanScore > computerScore) {
         displayResult("Congratulations! You won the game!",0)
@@ -141,6 +142,6 @@ function toggleClasses(result,index){
     classNames.forEach((value,i)=>{if(index===i ) result.classList.toggle(value,true); else result.classList.toggle(value,false) });
 
 }
-function continueGameOrNot(){
-    return document.querySelector(".playerCurrent").textContent==="5"||document.querySelector(".computerCurrent").textContent==="5";
+function endGameOrNot(){
+    return document.querySelector(".playerCurrent").textContent==="1"||document.querySelector(".computerCurrent").textContent==="1";
 }
