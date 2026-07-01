@@ -2,4 +2,30 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+}
+
+body {
+    background-color: #0F172A;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    text-align: center;
+}
+
+.mainHeading {
+    font-size: 72px;
+    font-weight: 800;
+    color: #F8FAFC;
+    letter-spacing: 2px;
+}
+
+
+.subHeading {
+    font-size: 24px;
+    font-weight: 400;
+    color: #94A3B8;
+    margin-top: 15px;
+
 }
