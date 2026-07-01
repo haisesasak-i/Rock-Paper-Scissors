@@ -1,10 +1,22 @@
 
+const buttonContainer = document.querySelector(".buttonsContainer");
+buttonContainer.addEventListener("click",(event)=>{
+    //closet button is used as i am using event delegation and as each button has an image and span so they can trigger click too but i want the button to find find the text like rock paper  
+    let userChoiceButton =event.target.closest("button");
+    //AS there is spacing inside the button container, so that spacing can cause click event too making the closet button null  as there is no button above the spacing and under the button container 
+    if(userChoiceButton!=null){
+        let userChoice = userChoiceButton.children[1].textContent;
+        
+    }
+});
+
 function getComputerChoice(){
     let choiceNumber = Math.floor(Math.random()*3)+1;
     return getChoiceThroughNumber(choiceNumber);
     
     
 }
+//leaving it here in case someone wants to create console base game
 function getHumanChoice(){
     let userChoiceNumber = 0;
     do {
@@ -25,7 +37,7 @@ function getChoiceThroughNumber(choiceNumber=0){
         return "Not a valid choice number"
     }
 }
-function playGame(){
+function playGame(userChoice =""){
     let humanScore =0;
     let computerScore =0;
     const numberOfRounds =5;    
