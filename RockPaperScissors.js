@@ -6,6 +6,7 @@ buttonContainer.addEventListener("click",(event)=>{
     //AS there is spacing inside the button container, so that spacing can cause click event too making the closet button null  as there is no button above the spacing and under the button container 
     if(userChoiceButton!=null){
         let userChoice = userChoiceButton.children[1].textContent;
+        playGame(userChoice);
         
     }
 });
@@ -38,30 +39,26 @@ function getChoiceThroughNumber(choiceNumber=0){
     }
 }
 function playGame(userChoice =""){
-    let humanScore =0;
-    let computerScore =0;
-    const numberOfRounds =5;    
-    for (let i =0;i<numberOfRounds;i++){
-        const userChoice =getHumanChoice();
+   
         const computerChoice = getComputerChoice();
         let result =playRound(userChoice,computerChoice,humanScore,computerScore);
-        switch(result){
-            case "win":
-            humanScore++;
-            console.log("You won the round");
-            break;
-            case "lose":
-            computerScore++;
-            console.log("You lost the round");
-            break;
-            default:
-            console.log("This round was a draw");
-        }
-        printRoundScores(humanScore,computerScore,i);
+        // switch(result){
+        //     case "win":
+        //     humanScore++;
+        //     console.log("You won the round");
+        //     break;
+        //     case "lose":
+        //     computerScore++;
+        //     console.log("You lost the round");
+        //     break;
+        //     default:
+        //     console.log("This round was a draw");
+        // }
+        printRoundScores(result);
         
-    }
-    console.log("Game Result:")
-    printGameResult(humanScore,computerScore);
+    
+    // console.log("Game Result:")
+    // printGameResult(humanScore,computerScore);
 }
 
 
@@ -90,10 +87,24 @@ function playRound(humanSelection = "", computerSelection = "") {
 function printChoices(humanSelection="", computerSelection=""){
     console.log(`You chose:${humanSelection}\nComputer chose: ${computerSelection}`);
 }
-function printRoundScores(humanScore=0,computerScore=0,roundNumber=1){
-    console.log(`Round ${roundNumber+1} Scores:`);
-    console.log(`Your Score:${humanScore}\nComputer Score:${computerScore}`);
+function printRoundScores(winner){
+    // console.log(`Round ${roundNumber+1} Scores:`);
+    // console.log(`Your Score:${humanScore}\nComputer Score:${computerScore}`);
+
+    if (result =="win"){
+        const humanScore = document.querySelector(".playerCurrent");
+        let currentScore = +humanScore.textContent+1;
+        humanScore.textContent =currentScore;
+    }
+    else if (result =="lose"){
+        const computerScore = document.querySelector(".computerCurrent");
+        let currentScore = +computerScore.textContent+1;
+        computerScore.textContent =currentScore;
+    }
+    else return;
+    
 }
+
 function printGameResult(humanScore = 0, computerScore = 0) {
     
     if (humanScore > computerScore) {
