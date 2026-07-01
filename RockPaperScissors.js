@@ -41,7 +41,8 @@ function getChoiceThroughNumber(choiceNumber=0){
 function playGame(userChoice =""){
    
         const computerChoice = getComputerChoice();
-        let result =playRound(userChoice,computerChoice,humanScore,computerScore);
+        let result =playRound(userChoice,computerChoice);
+        
         // switch(result){
         //     case "win":
         //     humanScore++;
@@ -87,22 +88,23 @@ function playRound(humanSelection = "", computerSelection = "") {
 function printChoices(humanSelection="", computerSelection=""){
     console.log(`You chose:${humanSelection}\nComputer chose: ${computerSelection}`);
 }
-function printRoundScores(winner){
-    // console.log(`Round ${roundNumber+1} Scores:`);
-    // console.log(`Your Score:${humanScore}\nComputer Score:${computerScore}`);
-
+function printRoundScores(result){
+    updateScoreAndRound(".roundNumber");
+    
     if (result =="win"){
-        const humanScore = document.querySelector(".playerCurrent");
-        let currentScore = +humanScore.textContent+1;
-        humanScore.textContent =currentScore;
+        updateScoreAndRound(".playerCurrent");
     }
     else if (result =="lose"){
-        const computerScore = document.querySelector(".computerCurrent");
-        let currentScore = +computerScore.textContent+1;
-        computerScore.textContent =currentScore;
+        updateScoreAndRound(".computerCurrent");
     }
     else return;
     
+}
+function updateScoreAndRound(className){
+    //SOR = score or round
+    const currentSOR = document.querySelector(className);
+    currentSOR.textContent= +currentSOR.textContent+1;
+
 }
 
 function printGameResult(humanScore = 0, computerScore = 0) {
