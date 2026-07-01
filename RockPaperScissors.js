@@ -67,9 +67,10 @@ function playGame(userChoice =""){
        if(endGameOrNot()) {
             
             
-            const humanScore = document.querySelector(".playerCurrent");
-            const computerScore = document.querySelector(".computerCurrent");
-            printGameResult(humanScore,computerScore);
+            const humanScore = document.querySelector(".playerCurrent").textContent;
+            const computerScore = document.querySelector(".computerCurrent").textContent;
+            printGameResult(humanScore, computerScore);
+
        }
     
     
@@ -131,7 +132,7 @@ function updateScoreAndRound(className){
 
 }
 
-function printGameResult(humanScore = 0, computerScore = 0) {
+function printGameResult(humanScore = "", computerScore = "") {
     const human = Number(humanScore);
     const computer = Number(computerScore);
 
