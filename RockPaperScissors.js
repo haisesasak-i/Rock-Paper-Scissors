@@ -1,4 +1,4 @@
-playGame();
+
 function getComputerChoice(){
     let choiceNumber = Math.floor(Math.random()*3)+1;
     return getChoiceThroughNumber(choiceNumber);
