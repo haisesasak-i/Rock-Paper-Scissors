@@ -1,9 +1,15 @@
 
 const buttonContainer = document.querySelector(".buttonsContainer");
 buttonContainer.addEventListener("click",(event)=>{
-    //closet button is used as i am using event delegation and as each button has an image and span so they can trigger click too but i want the button to find find the text like rock paper  
+    // Using event delegation: one listener on the container instead of
+    // one per button. Buttons contain an <img> and <span>, so a click can
+    // land on either child — closest("button") walks up to the actual
+    // button regardless of which child was clicked.
+  
     let userChoiceButton =event.target.closest("button");
-    //AS there is spacing inside the button container, so that spacing can cause click event too making the closet button null  as there is no button above the spacing and under the button container 
+    // Clicking in the gaps between buttons (padding/margin inside the
+    // container) also fires this listener, but there's no button there —
+    // closest() returns null in that case, so we guard against it.
     if(userChoiceButton!=null){
         let userChoice = userChoiceButton.children[1].textContent;
         playGame(userChoice);
