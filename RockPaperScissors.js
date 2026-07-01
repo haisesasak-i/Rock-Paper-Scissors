@@ -86,7 +86,11 @@ function playRound(humanSelection = "", computerSelection = "") {
     return "lose";
 }
 function printChoices(humanSelection="", computerSelection=""){
-    console.log(`You chose:${humanSelection}\nComputer chose: ${computerSelection}`);
+    const userMove = document.querySelector(".userChoice");
+    const computerMove = document.querySelector(".computerChoice");
+    userMove.textContent=humanSelection;
+    computerMove.textContent=computerSelection;
+
 }
 function printRoundScores(result){
     updateScoreAndRound(".roundNumber");
