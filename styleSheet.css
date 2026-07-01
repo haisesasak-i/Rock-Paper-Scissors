@@ -167,11 +167,15 @@ div img {
 }
 
 .computer,
-.user,
-.result {
+.user {
     font-size: 30px;
     font-weight: 600;
 
+}
+
+.result {
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .winner {

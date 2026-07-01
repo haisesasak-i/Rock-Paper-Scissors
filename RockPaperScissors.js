@@ -125,14 +125,14 @@ function updateScoreAndRound(className){
 
 }
 
-function printGameResult(humanScore = 0, computerScore = 0) {
+function printGameResult() {
     
     if (humanScore > computerScore) {
         displayResult("Congratulations! You won the game!",0)
     } else if (computerScore > humanScore) {
         displayResult("You lost the game. Better luck next time!",1);
     } else {
-        displayResult("It's a draw!",2);
+        displayResult("This game is a draw!",2);
     }
 }
 //it gets the index of class depending on the winner and removes the classes and apply the required class like winner class if round is a win
@@ -142,5 +142,5 @@ function toggleClasses(result,index){
 
 }
 function continueGameOrNot(){
-    return document.querySelector(".roundNumber").textContent==="5";
+    return document.querySelector(".playerCurrent").textContent==="5"||document.querySelector(".computerCurrent").textContent==="5";
 }
