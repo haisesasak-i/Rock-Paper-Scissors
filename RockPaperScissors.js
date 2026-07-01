@@ -46,13 +46,16 @@ function playGame(userChoice =""){
 
         switch(result){
             case "win":
-            resultText.textContent="You have won the round.";
+            resultText.textContent="Congratulations!You have won the round.";
+            toggleClasses(resultText,0);
             break;
             case "lose":
-            resultText.textContent="You have lost the round."
+            resultText.textContent="Alas! You have lost the round."
+            toggleClasses(resultText,1);
             break;
             default:
             resultText.textContent="This round was a draw";
+            toggleClasses(resultText,2);
         }
         printRoundScores(result);
         
@@ -119,4 +122,10 @@ function printGameResult(humanScore = 0, computerScore = 0) {
     } else {
         console.log("It's a draw!");
     }
+}
+//it gets the index of class depending on the winner and removes the classes and apply the required class like winner class if round is a win
+function toggleClasses(result,index){
+    let classNames = ["winner","loser","draw"];
+    classNames.forEach((value,i)=>{if(index===i ) result.classList.toggle(value,true); else result.classList.toggle(value,false) });
+
 }
