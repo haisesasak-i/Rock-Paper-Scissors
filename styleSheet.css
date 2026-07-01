@@ -11,6 +11,44 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.flex {
+    display: flex;
+}
+
+.sectionMain {
+    color: #3B82F6;
+    font-size: 28px;
+    font-weight: 700;
+
+}
+
+.buttonHeading {
+    
+}
+
+.sectionStyle,
+button {
+    border-radius: 16px;
+}
+
+.mainContent,
+.sectionStyle {
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.sectionStyle {
+    background-color: #1E293B;
+    border: 2px solid #334155;
+
+    padding: 30px;
+
+
+    align-items: center;
+
+}
+
 .header {
     text-align: center;
 }
@@ -28,5 +66,42 @@ body {
     font-weight: 400;
     color: #94A3B8;
     margin-top: 15px;
+
+}
+
+button {
+    width: 200px;
+    height: 220px;
+    border: 2px solid #0f141a;
+}
+
+div img {
+    width: 150px;
+    height: auto;
+}
+
+.rock {
+    background-color: #2563EB;
+
+}
+
+.paper {
+    background-color: #22C55E;
+}
+
+.scissors {
+    background-color: #EF4444;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 
 }
